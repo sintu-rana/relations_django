@@ -10,4 +10,4 @@ admin.site.register(Product)
 
 admin.site.register(Brand)
 
-# admin.site.register(Rating)
+admin.site.register(Holder)
