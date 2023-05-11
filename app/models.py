@@ -20,18 +20,17 @@ class Shop(models.Model):
 
 class Brand(models.Model):
     name=models.CharField(max_length=50)
-    price=models.DecimalField(max_digits=10, decimal_places=2)
-    rating = models.DecimalField(max_digits=10, decimal_places=2)
+    
 
 class Product(models.Model):
     name=models.CharField(max_length=50)
     shop=models.ForeignKey(Shop, on_delete=models.CASCADE,related_name='products')
-    brands = models.ManyToManyField(Brand, related_name='products')
+    
 
 
-class Holder(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='holders')
-    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='holders')
+class Save_information(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='brand')
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='save_information')
     price=models.DecimalField(max_digits=10, decimal_places=2)
     rating = models.DecimalField(max_digits=10, decimal_places=2)
 

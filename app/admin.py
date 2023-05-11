@@ -10,4 +10,4 @@ admin.site.register(Product)
 
 admin.site.register(Brand)
 
-admin.site.register(Holder)
+admin.site.register(Save_information)
