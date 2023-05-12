@@ -25,13 +25,13 @@ class Product(models.Model):
     shop=models.ForeignKey(Shop, on_delete=models.CASCADE,related_name='products')
     price=models.DecimalField(max_digits=10, decimal_places=2)
     brands=models.ManyToManyField(Brand, related_name='products')
-    rate = models.DecimalField(max_digits=10, decimal_places=2)
+    
 
 
-# class Rating(models.Model):
-#     value=models.IntegerField()
-#     brand=models.ForeignKey(Brand, on_delete=models.CASCADE)
-#     product=models.ForeignKey(Product, on_delete=models.CASCADE)
+class Rating(models.Model):
+    value=models.IntegerField()
+    brand=models.ForeignKey(Brand, on_delete=models.CASCADE)
+    product=models.ForeignKey(Product, on_delete=models.CASCADE)
 
 
 
